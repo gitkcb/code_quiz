@@ -7,7 +7,7 @@ header{
 .third,
 .fourth,
 .fifth,
-#highscore{
+.enterhighscores{
     margin: auto;
    
     
@@ -28,7 +28,10 @@ header{
 .fifth{
     display:none;
 }
-#highscores{
+.enterhighscores{
+    display:none;
+}
+.alltime{
     display:none;
 }
 .left{

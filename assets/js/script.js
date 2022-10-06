@@ -12,8 +12,11 @@ var fourth=document.querySelector('.fourth');
 var answer4= fourth.querySelector('ul');
 var fifth= document.querySelector('.fifth');
 var answer5= fifth.querySelector('ul');
-var highscores = document.querySelector('#highscores');
-var incorrect= document.getElementsByClassName('.incorrect');
+var enterhighscores = document.querySelector('.enterhighscores');
+var alltime = document.querySelector('.alltime');
+var incorrect= document.querySelector('.incorrect');
+var submit = document.querySelector('.submit');
+
 
 var secondsLeft = 70;
 function startTimer(){
@@ -33,10 +36,15 @@ function loss (){
 }
 },1000)
 function timeLoss(){
+    
     secondsLeft -=10;
 }
+
 incorrect.onclick = timeLoss;
-};
+
+}
+
+
 
 button.onclick = startTimer;
 function nextQuestion(){
@@ -59,14 +67,23 @@ function nextQuestion3(){
     fifth.style.display="block";
 }
 answer4.onclick = nextQuestion3;
+let score;
 function nextQuestion4(){
     fifth.style.display="none";
-    highscores.style.display="block";
-    
+    enterhighscores.style.display="block";
     let score = secondsLeft
+
     console.log(score);  
+    
 }
-answer5.onclick = nextQuestion4
+
+answer5.onclick = nextQuestion4;
+function scoreboard(){
+    enterhighscores.style.display='none';
+    alltime.style.display = 'block';
+
+}
+submit.onclick = scoreboard;
 
 
 
