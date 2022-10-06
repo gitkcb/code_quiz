@@ -1,0 +1,38 @@
+header{
+    height: 5rem;
+}
+.welcome,
+.first,
+.second,
+.third,
+.fourth,
+.fifth,
+#highscore{
+    margin: auto;
+   
+    
+}
+
+.first{
+    display: none;
+}
+.second{
+    display:none;
+}
+.third{
+    display:none;
+}
+.fourth{
+    display:none;
+}
+.fifth{display:none;
+}
+#highscore{
+    display:none;
+}
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}
