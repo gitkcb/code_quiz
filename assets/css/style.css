@@ -25,9 +25,10 @@ header{
 .fourth{
     display:none;
 }
-.fifth{display:none;
+.fifth{
+    display:none;
 }
-#highscore{
+#highscores{
     display:none;
 }
 .left{
