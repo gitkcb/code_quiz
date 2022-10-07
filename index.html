@@ -7,7 +7,7 @@
     </head>
     <body>
         <header>
-            <p class="left"><a href =#highscores>View high scores</a></p>
+            <p class="left"><a href =#alltime>View high scores</a></p>
             <p class="right time">Time: 70</p>
         </header>
         <main class="main">
@@ -68,13 +68,19 @@
             <h1>All done!</h1>
             <h2>Your final score is:</h2>
             <div>
-                <textarea id="textarea" placeholder="Your intials" ></textarea>
+                <textarea id="textarea" placeholder="Your initials" ></textarea>
                 <div>
             <button class="return">Return</button>
             <button class="submit">Submit</button>
         </div>
-        <div class="alltime">
+        <div id="alltime">
             <h1>Top Scores</h1>
+            <ol>
+                <li><span id ="saved-initials"></span></li>
+                <li></li>
+                <li></li>
+
+            </ol>
 
         </div>
         </main>
