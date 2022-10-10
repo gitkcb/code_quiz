@@ -24,12 +24,13 @@ var initials= document.querySelector('#textarea')
 var secondsLeft = 70;
 function startTimer(){
     welcome.style.display ="none";
-    first.style.display ='block';
-    timerInterval;
+    first.style.display ='block';}
     
-}
+    
+
  
 var timerInterval = setInterval(function(){
+    
     secondsLeft--;
     timeEl.textContent= "Time:" + secondsLeft;
     if (secondsLeft===0){
@@ -43,14 +44,16 @@ function loss (){
 },1000)
 function timeLoss(){
     
-    secondsLeft -=10;
-}
+    secondsLeft -=10;}
+
 function myStopFunction() {
     clearInterval(timerInterval);
 
-incorrect.onclick = timeLoss;
+
 
 }
+incorrect.onclick = timeLoss;
+
 button.onclick = startTimer;
 2
 function nextQuestion(){
@@ -86,15 +89,18 @@ answer5.onclick = nextQuestion4;
 function saveDetails(){
     var highDetails = {
  highInitials:initials.value.trim(),
+ highScore: score
+
 
     }
 localStorage.setItem('highDetails', JSON.stringify(highDetails))
-};
+}
+
 function renderDetails(){
     var lastGame = JSON.parse(localStorage.getItem("highDetails"));
     if (lastGame !== null) {
-        document.getElementById("saved-initials").innerHTML = lastGame + '-' + score;
-       
+        document.getElementById("saved-initials").innerHTML = lastGame.highInitials; 
+       document.getElementById("saved-score").innerHTML = lastGame.highScore;
        
 
     }
@@ -104,9 +110,16 @@ function renderDetails(){
         console.log( lastGame + score);
 
 }
+submit.addEventListener("click", function(event){
+    event.preventDefault();
+    saveDetails();
+    renderDetails();
+    enterhighscores.style.display='none';
+    alltime.style.display='block';
 
+})
 
-function scoreboard(){
+/*function scoreboard(){
     enterhighscores.style.display='none';
     alltime.style.display='block';
     saveDetails();
@@ -121,7 +134,7 @@ function homescreen(){
   main.style.display='block';
   
 }
-retbut.onclick = homescreen;
+retbut.onclick = homescreen;*/
 
 
 
