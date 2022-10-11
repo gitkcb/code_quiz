@@ -98,8 +98,6 @@ function nextQuestion4(){
     fifth.style.display="none";
     enterhighscores.style.display="block";
     let score = secondsLeft;
-   
-    
     finalscore.innerHTML= "Your final score is: " + score;
     console.log(score);  
 }
@@ -108,29 +106,23 @@ fifincorrect.onclick= timeLoss;
 fifincorrect1.onclick= timeLoss;
 fifincorrect2.onclick= timeLoss;
 
+
 function saveDetails(){
     var highDetails = {
- highInitials:initials.value.trim(),
- highScore: score
+ highInitials:initials.value.trim() 
+ 
  };
 localStorage.setItem('highDetails', JSON.stringify(highDetails));
 renderDetails();
 }
-
 function renderDetails(){
     var lastGame = JSON.parse(localStorage.getItem("highDetails"));
     if (lastGame !== null) {
-        document.getElementById("saved-initials").innerHTML = lastGame.highInitials; 
-       document.getElementById("saved-score").innerHTML = lastGame.highScore;
-       
-
-    }
-        else{
+        document.getElementById("saved-initials").innerHTML = lastGame.highInitials;} 
+       else{
             return;
         }
-        console.log(highDetails);
-
-}
+    }
 submit.addEventListener("click", function(event){
     event.preventDefault();
     saveDetails();
@@ -139,22 +131,13 @@ submit.addEventListener("click", function(event){
     alltime.style.display='block';
 
 })
-
-function scoreboard(){
-    enterhighscores.style.display='none';
-    alltime.style.display='block';
-    saveDetails();
-    renderDetails();
-    
-    
-
+function mainScreen(){
+    alltime.style.display="none";
+    welcome.style.display='block';
 }
-submit.onclick = scoreboard;
-function homescreen(){
-  enterhighscores.style.display='none';
-  main.style.display='block';
-  
-}
+retbut.onclick = mainScreen;
+
+
 
 
 
