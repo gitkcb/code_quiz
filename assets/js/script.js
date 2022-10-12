@@ -1,3 +1,4 @@
+// Query selectors
 var main = document.querySelector(".main");
 var timeEl = document.querySelector(".time");
 var button = document.querySelector(".button");
@@ -19,6 +20,7 @@ var incorrect= document.querySelectorAll('.incorrect');
 var submit = document.querySelector('.submit');
 var retbut= document.querySelector('.return');
 var initials= document.querySelector('#textarea');
+//selects incorrect answers
 var firincorrect=first.querySelector('.incorrect');
 var firincorrect1=first.querySelector('.incorrect1');
 var firincorrect2=first.querySelector('.incorrect2');
@@ -34,9 +36,10 @@ var fouincorrect2=fourth.querySelector('.incorrect2');
 var fifincorrect= fifth.querySelector('.incorrect');
 var fifincorrect1=fifth.querySelector('.incorrect1');
 var fifincorrect2=fifth.querySelector('.incorrect2');
+//return button 
 var goToHighscore=document.querySelector('.left');
 
-
+//Timer function 
 var timerInterval;
 var secondsLeft = 70;
 function startTimer(){
@@ -53,16 +56,18 @@ function startTimer(){
 }
     },1000)
     }
+//Start quiz function
 function startQuiz(){
     startTimer(); 
 
 } 
+// Time reduction function
 function timeLoss(){
     secondsLeft -= 10;
 }
 
 button.addEventListener("click",startQuiz);
-
+// Scroll through questions functions
 function nextQuestion(){
     first.style.display="none";
     second.style.display="block";
@@ -105,12 +110,13 @@ function nextQuestion4(){
     finalscore.innerHTML= "Your final score is: " + score;
     console.log(score);  
 }
+//couldn't figure out how to incorporate a stoptimer function that worked
 answer5.onclick = nextQuestion4;
 fifincorrect.onclick= timeLoss;
 fifincorrect1.onclick= timeLoss;
 fifincorrect2.onclick= timeLoss;
 
-
+// Adding initials to local storage function- couldn't store or render score or create a list of previous games
 function saveDetails(){
     var highDetails = {
  highInitials:initials.value.trim() 
@@ -119,6 +125,7 @@ function saveDetails(){
 localStorage.setItem('highDetails', JSON.stringify(highDetails));
 renderDetails();
 }
+
 function renderDetails(){
     var lastGame = JSON.parse(localStorage.getItem("highDetails"));
     if (lastGame !== null) {
@@ -135,6 +142,7 @@ submit.addEventListener("click", function(event){
     alltime.style.display='block';
 
 })
+//function that brings you to main screen
 function mainScreen(){
     alltime.style.display="none";
     welcome.style.display='block';

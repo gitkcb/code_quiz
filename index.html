@@ -7,10 +7,12 @@
     </head>
     <body>
         <div class="container">
+            <!--header element-->
         <header>
             <p class="left"><a href =#alltime>View high scores</a></p>
             <p class="right time">Time: 70</p>
         </header>
+        <!--main element that holds all questions-->
         <main class="main">
         
         <div class = 'welcome'>
@@ -18,6 +20,7 @@
             <p>Answer the following questions without running out of time! <br>If you get a wrong answer- YOU WILL LOSE TIME!</p>
             <button class="button">Start Game!</button>
         </div>
+        <!--first question-->
         <div class='first'>
             <h1>What is the sections called in HTML that isn't visible to users?</h1>
             <ul>
@@ -29,6 +32,7 @@
             </ul>
             </h1>
         </div>
+        <!--second question-->
         <div class='second'>
             <h1>What symbol do you use to select ID's in CSS?</h1>
             <ul>
@@ -38,6 +42,7 @@
                 <li class="incorrect2">&</li>
             </ul>
         </div>
+        <!--third question-->
         <div class='third'>
             <h1>What keywords can you use to create a variable that you can change?</h1>
             <ul>
@@ -47,6 +52,7 @@
                 <li>let & var</li>
             </ul>
         </div>
+        <!--fourth question-->
         <div class='fourth'>
             <h1>How do you log things to the console?</h1>
             <ul>
@@ -56,6 +62,7 @@
                 <li class="incorrect2">console.logger();</li>
             </ul>
         </div>
+        <!--fifth question-->
         <div class='fifth'>
             <h1>What element do you use to add your CSS stylesheet?</h1>
             <ul>
@@ -66,15 +73,18 @@
                
             </ul>
         </div>
+        <!--End of quiz-->
         <div class ='enterhighscores'>
             <h1>All done!</h1>
             <h2>Your final score is:</h2>
+        <!--textbox-->
             <div>
                 <textarea id="textarea" placeholder="Your initials" ></textarea>
             </div>
             
             <button class="submit">Submit</button>
         </div>
+        <!--final page where top scores should show-->
         <div id="alltime">
             <h1>Top Scores</h1>
             <ol>
